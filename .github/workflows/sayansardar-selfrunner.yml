@@ -1,4 +1,4 @@
-name: Upload and download demo-2 using Self Hosted Runner
+name: Upload and download demo-2 using Self Hosted Runner by Sayan Sardar
 on: 
  push:
   branches: 
@@ -19,7 +19,7 @@ jobs:
          name: my-file
          path: myfiles/file1
   downloadfile:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     needs: uploadfile
     steps: 
     - name: download the artifact from previous job to this job
