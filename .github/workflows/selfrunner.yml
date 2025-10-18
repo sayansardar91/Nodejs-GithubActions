@@ -5,7 +5,7 @@ on:
    - sayan-dev 
 jobs:
   uploadfile:
-    runs-on: runs-on: self-hosted 
+    runs-on: self-hosted
     steps: 
      - name: create a directory 
        run: |
@@ -19,7 +19,7 @@ jobs:
          name: my-file
          path: myfiles/file1
   downloadfile:
-    runs-on: runs-on: self-hosted
+    runs-on: self-hosted
     needs: uploadfile
     steps: 
     - name: download the artifact from previous job to this job
