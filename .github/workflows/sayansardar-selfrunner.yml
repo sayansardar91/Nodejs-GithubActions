@@ -1,5 +1,4 @@
-name: Upload and download demo-2 using Self Hosted Runner by Sayan Sardar
-on: 
+name: Sayan Sardar Upload and download using Self Hosted Runner
  push:
   branches: 
    - sayan-dev 
