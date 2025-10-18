@@ -1,4 +1,5 @@
 name: Sayan Sardar Upload and download using Self Hosted Runner
+on:
  push:
   branches: 
    - sayan-dev 
