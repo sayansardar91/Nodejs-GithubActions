@@ -1,0 +1,30 @@
+name: Upload and download demo-2 using Self Hosted Runner
+on: 
+ push:
+  branches: 
+   - sayan-dev 
+jobs:
+  uploadfile:
+    runs-on: runs-on: self-hosted 
+    steps: 
+     - name: create a directory 
+       run: |
+        mkdir myfiles
+        pwd
+     - name: create a file in directory 
+       run: echo "hello All" > myfiles/file1
+     - name: upload the file to github 
+       uses: actions/upload-artifact@v4
+       with: 
+         name: my-file
+         path: myfiles/file1
+  downloadfile:
+    runs-on: runs-on: self-hosted
+    needs: uploadfile
+    steps: 
+    - name: download the artifact from previous job to this job
+      uses: actions/download-artifact@v4
+      with: 
+       name: my-file
+    - name: check if the file is on runner or not 
+      run: ls -ltr
